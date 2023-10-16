@@ -3,7 +3,7 @@ import styles from './styles.module.css';
 export default function GithubCorner(){
   return (
     <a
-    href="https://github.com/vercel/nextgram"
+    href="https://github.com/jozhuare99/NextJsTest"
     target="_blank"
     rel="noopener noreferrer"
     className={styles['github-corner']}
