@@ -1,5 +1,3 @@
-'use client'
-
 import Frame from '../../component/frame/Frame';
 import {Photos} from '../../data/interceptionData';
 

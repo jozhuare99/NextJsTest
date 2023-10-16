@@ -5,7 +5,7 @@ export default function GlobalError({
 }){
   <html>
     <body>
-      <h2>Something went wrong!</h2>
+      <h2>Global error Something went wrong!</h2>
       <p></p>
       <button onClick={() => reset()}>Try Again</button>
     </body>

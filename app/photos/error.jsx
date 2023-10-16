@@ -1,7 +1,7 @@
 "use client";
 import { useEffect } from "react";
 
-export default function AppError({
+export default function PhotosError({
   error,reset
 }){
   useEffect(() => {
@@ -10,7 +10,7 @@ export default function AppError({
 
   return (
     <div>
-      <h2>Something went wrong on root app error!</h2>
+      <h2>Something went wrong on photos page error!</h2>
       <button onClick={() => reset()}>try again</button>
     </div>
   )

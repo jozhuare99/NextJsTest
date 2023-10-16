@@ -1,8 +1,10 @@
-import './global.css'
-import GithubCorner from './component/githubcorner/GithubCorner'
+import './global.css';
+import GithubCorner from './component/githubcorner/GithubCorner';
+
 
 export const metadata = {
   metadataBase: new URL('https://nextjs.org/'),
+  
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: 'cyan' },
     { media: '(prefers-color-scheme: dark)', color: 'black' },
