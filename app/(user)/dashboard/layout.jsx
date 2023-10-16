@@ -6,7 +6,7 @@ export const metadata = {
   }
 }
 
-export default function DashboardLayout({children}) {
+export default function DashboardLayout({children, auth}) {
 
 
   return (
@@ -14,6 +14,7 @@ export default function DashboardLayout({children}) {
       <h1>dashboard layout</h1>
       <nav>nav</nav>
       {children}
+      {auth}
     </section>
   )
 }

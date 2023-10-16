@@ -1,7 +1,17 @@
+'use client'
+
+import Modal from '../../../component/modal';
+import {useRouter} from 'next/navigation'
+
 export default function Page(){
+  const router = useRouter()
   return (
-    <div>
-      <button>login</button>
-    </div>
+    <Modal>
+      <span onClick={() => router.back()}>Close modal</span>
+      <h1>Login</h1>
+      <div>
+        <button>login</button>
+      </div>
+    </Modal>
   )
 }

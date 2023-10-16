@@ -1,4 +1,5 @@
-
+import './global.css'
+import GithubCorner from './component/githubcorner/GithubCorner'
 
 export const metadata = {
   metadataBase: new URL('https://nextjs.org/'),
@@ -105,12 +106,14 @@ export const metadata = {
   },
 }
 
-export default function RootLayout({children}) {
+export default function RootLayout({children, modal}) {
   return (
     <html lang="en">
-      <head>
-      </head>
-      <body>{children}</body>
+      <body>
+        <GithubCorner />
+        {children}
+        {modal}
+      </body>
     </html>
   )
 }
