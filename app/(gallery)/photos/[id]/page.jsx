@@ -1,5 +1,5 @@
-import Frame from '../../component/frame/Frame';
-import {Photos} from '../../data/interceptionData';
+import Frame from '../../../component/frame/Frame';
+import {Photos} from '../../../data/interceptionData';
 
 export default function PhotoPage({params: {id}}){
   const photo = Photos?.find(p => {

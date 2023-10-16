@@ -108,13 +108,12 @@ export const metadata = {
   },
 }
 
-export default function RootLayout({children, modal}) {
+export default function RootLayout({children}) {
   return (
     <html lang="en">
       <body>
         <GithubCorner />
         {children}
-        {modal}
       </body>
     </html>
   )

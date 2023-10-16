@@ -6,18 +6,18 @@ import Link from 'next/link';
 export function Links(){
   const pathname = usePathname();
   return(
-    <ul>
+    <ul className='flex flex-row gap-2 px-2 font-bold text-white flex-nowrap bg-red-950'>
       <li>
-        <Link className={pathname === '/' ? 'active' : ''} href='/'>Home</Link>
+        <Link className={pathname === '/' ? 'text-cyan-400' : ''} href='/'>Home</Link>
       </li>
       <li>
-        <Link className={pathname === '/dashboard' ? 'active' : ''} href='/dashboard'>Dashboard</Link>
+        <Link className={pathname === '/dashboard' ? 'text-cyan-400' : ''} href='/dashboard'>Dashboard</Link>
       </li>
       <li>
-        <Link className={pathname === '/about' ? 'active' : ''} href='/about'>About</Link>
+        <Link className={pathname === '/about' ? 'text-cyan-400' : ''} href='/about'>About</Link>
       </li>
       <li>
-        <Link className={pathname === '/blog' ? 'active' : ''} href='/blog'>Blog</Link>
+        <Link className={pathname === '/blog' ? 'text-cyan-400' : ''} href='/blog'>Blog</Link>
       </li>
     </ul>
   )
