@@ -1,9 +1,10 @@
-
-export default function Page({children}) {
+import {Links} from './component/links'
+export default function Page() {
   
   return (
     <div>
-      {children}
+      <Links />
+      pages
     </div>
   )
 }
