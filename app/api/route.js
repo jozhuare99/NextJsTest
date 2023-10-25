@@ -27,6 +27,17 @@ export default function GET(req){
 export async function POST(request) {
   const formData = await request.formData();
   const name = formData.get('name');
+  
   const email = formData.get('email');
+  
+  const connection = {
+    host: process.env.DB_HOST,
+    username: process.env.DB_USER,
+    password: process.env.DB_PASS,
+  }
+
+  console.log(connection);
+  
   return Response.json({ name, email });
+
 }

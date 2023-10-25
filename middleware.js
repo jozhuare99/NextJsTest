@@ -1,8 +1,16 @@
-import { NextResponse } from 'next/server'
+
+import {NextResponse} from 'next/server'
+
+
+const legacyPrefixes = ['/docs', '/blog']
  
-export function middleware(request) {
-  // Assume a "Cookie:nextjs=fast" header to be present on the incoming request
-  // Getting cookies from the request using the `RequestCookies` API
+export default function middleware(request) {
+  const { pathname } = request.nextUrl;
+
+  console.log(pathname)
+
+
+
   let cookie = request.cookies.get('nextjs')
   console.log(cookie) // => { name: 'nextjs', value: 'fast', Path: '/' }
   const allCookies = request.cookies.getAll()
@@ -18,11 +26,16 @@ export function middleware(request) {
   response.cookies.set({
     name: 'vercel',
     value: 'fast',
-    path: '/',
+    path: '/about/path:*',
   })
   cookie = response.cookies.get('vercel')
   console.log(cookie) // => { name: 'vercel', value: 'fast', Path: '/' }
   // The outgoing response will have a `Set-Cookie:vercel=fast;path=/test` header.
  
   return response
+}
+
+
+export const config = {
+  matcher: '/about'
 }

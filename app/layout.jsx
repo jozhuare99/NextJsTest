@@ -1,5 +1,8 @@
 import './global.css';
 import GithubCorner from './component/githubcorner/GithubCorner';
+import {Links} from './component/links';
+import ThemeProvider from './theme-provider';
+import Navbar from './component/nav/navbar';
 
 
 export const metadata = {
@@ -112,8 +115,11 @@ export default function RootLayout({children}) {
   return (
     <html lang="en">
       <body>
-        <GithubCorner />
-        {children}
+        <ThemeProvider>
+          <Navbar />
+          <GithubCorner />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   )
