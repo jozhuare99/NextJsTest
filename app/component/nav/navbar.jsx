@@ -1,7 +1,8 @@
-'use client'
+
 import Container from '../ui/container';
 import Link from 'next/link';
 import MainNav from './main-nav';
+import NavbarActions from './nav-actions';
 
 export default async function Navbar() {
   // const categories = await getCategories()
@@ -11,7 +12,7 @@ export default async function Navbar() {
     [
       {
         "id": "apparel",
-        "label": "Apparel",
+        "name": "Apparel",
         "basic_categories": [
           "Women's Clothing",
           "Men's Clothing",
@@ -21,7 +22,7 @@ export default async function Navbar() {
       },
       {
         "id": "electronics",
-        "label": "Electronics",
+        "name": "Electronics",
         "basic_categories": [
           "Cell Phones & Accessories",
           "Computers & Tablets",
@@ -32,7 +33,7 @@ export default async function Navbar() {
       },
       {
         "id": "homeandgarden",
-        "label": "Home & Garden",
+        "name": "Home & Garden",
         "basic_categories": [
           "Appliances",
           "Bedding & Bath",
@@ -43,7 +44,7 @@ export default async function Navbar() {
       },
       {
         "id": "healthandbeauty",
-        "label": "Health & Beauty",
+        "name": "Health & Beauty",
         "basic_categories": [
           "Cosmetics & Personal Care",
           "Fragrances",
@@ -54,7 +55,7 @@ export default async function Navbar() {
       },
       {
         "id": "toysandgames",
-        "label": "Toys & Games",
+        "name": "Toys & Games",
         "basic_categories": [
           "Action Figures & Vehicles",
           "Arts & Crafts",
@@ -65,7 +66,7 @@ export default async function Navbar() {
       },
       {
         "id": "foodandbeverage",
-        "label": "Food & Beverage",
+        "name": "Food & Beverage",
         "basic_categories": [
           "Coffee & Tea",
           "Snacks & Candy",
@@ -76,7 +77,7 @@ export default async function Navbar() {
       },
       {
         "id": "petsupplies",
-        "label": "Pet Supplies",
+        "name": "Pet Supplies",
         "basic_categories": [
           "Food & Treats",
           "Grooming Supplies",
@@ -87,7 +88,7 @@ export default async function Navbar() {
       },
       {
         "id": "sportsandoutdoors",
-        "label": "Sports & Outdoors",
+        "name": "Sports & Outdoors",
         "basic_categories": [
           "Camping & Hiking",
           "Fitness Equipment",
@@ -106,6 +107,7 @@ export default async function Navbar() {
             <p className="text-xl font-bold">Store</p>
           </Link>
           <MainNav data={categories} />
+          <NavbarActions />
           
         </div>
       </Container>

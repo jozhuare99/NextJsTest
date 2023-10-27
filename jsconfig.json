@@ -3,6 +3,9 @@
     "baseUrl": ".",
     "paths": {
       "@/lib/*": ["./lib/*"],
+      "@/hooks/*": ["./hooks/*"],
+      "@/context/*": ["./context/*"],
+      "@/provider/*": ["./provider/*"],
     }
   }
 }
