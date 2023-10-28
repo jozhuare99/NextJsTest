@@ -3,9 +3,9 @@ import GithubCorner from "./component/githubcorner/GithubCorner";
 import { Urbanist } from "next/font/google";
 import ThemeProvider from "./theme-provider";
 import { CartContextProvider } from "@/context/cart-context";
-import { ModalContextProvider } from "@/context/preview-modal-context";
+
 import Navbar from "./component/nav/navbar";
-import ModalProvider from "providers/modal-provider";
+
 import ToastProvider from "providers/toast-provider";
 import Footer from "./component/footer";
 
@@ -124,16 +124,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={font.className}>
-              <GithubCorner />
+        <GithubCorner />
         <ThemeProvider>
           <CartContextProvider>
-            <ModalContextProvider>
               <ToastProvider />
-              <ModalProvider />
               <Navbar />
               {children}
               <Footer />
-            </ModalContextProvider>
           </CartContextProvider>
         </ThemeProvider>
       </body>

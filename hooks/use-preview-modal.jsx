@@ -6,6 +6,7 @@ const usePreviewModal = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [data,setData] = useState(null);
   const onOpen = (data) => {
+    // console.log('triggered') pass
     setIsOpen(true);
     setData(data);
   }

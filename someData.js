@@ -69,10 +69,14 @@ export const list = [
   }
 ]
 
-export const  products = {
+export const  products = [{
+  id: "asid8732hndjakdsb3u72gdbjhas",
   name: 'Zip Tote Basket',
   price: 140.00,
   rating: 4,
+  category: {
+    name: "i don't know"
+  },
   images: [
     {
       id: 1,
@@ -120,7 +124,9 @@ export const  products = {
       ]
     }
   ]
-}
+},
+
+]
 
 export const reviews = {
   average: 4,

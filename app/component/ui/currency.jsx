@@ -12,7 +12,7 @@ const Currency = ({value = 0}) => {
 
   useEffect(() => {
     setIsMounted(true);
-  }, {});
+  }, []);
 
   if(!isMounted) {
     return null;

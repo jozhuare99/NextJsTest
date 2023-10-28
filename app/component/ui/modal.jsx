@@ -6,6 +6,8 @@ import {Fragment} from 'react';
 import IconButton from './icon-button';
 
 const Modal = ( {open,onClose,children}) => {
+
+  console.log(open)
   return (
     <Transition show={open} as={Fragment} appear>
       <Dialog className="relative z-10" as="div" onClose={onClose}>
