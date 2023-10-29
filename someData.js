@@ -80,8 +80,14 @@ export const  products = [{
   images: [
     {
       id: 1,
-      name: 'Angled View',
-      src: Box,
+      name: 'Angled',
+      src: '/products/zipto/ziptoebasket.webp',
+      alt: 'Angled View front with bag zipped and handles upright.'
+    },
+    {
+      id: 2,
+      name: 'O View',
+      src: '/products/zipto/prod1.jpg',
       alt: 'Angled View front with bag zipped and handles upright.'
     }
   ],

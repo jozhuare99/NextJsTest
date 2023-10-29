@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import {ArrowsExpand, Cart} from "react-bootstrap-icons";
+import {ArrowsAngleExpand, Cart} from "react-bootstrap-icons";
 import {useRouter} from "next/navigation";
 import Currency from "./currency";
 import IconButton from "./icon-button";
@@ -38,7 +38,7 @@ const ProductCard = ({data}) => {
         />
         <div className="absolute w-full px-6 transition opacity group-hover:opacity-100 bottom-5">
           <div className="flex justify-center gap-x-6">
-            <IconButton onClick={onPreview} icon={<ArrowsExpand size={20} className="text-slate-600" />} />
+            <IconButton onClick={onPreview} icon={<ArrowsAngleExpand size={20} className="text-slate-600" />} />
             <IconButton onClick={onAddToCart} icon={<Cart size={20} className="text-slate-600" />} />
           </div>
         </div>

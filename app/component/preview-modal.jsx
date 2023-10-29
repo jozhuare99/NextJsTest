@@ -7,7 +7,7 @@ import Modal from './ui/modal';
 
 const PreviewModal = () => {
   // const {isOpen, onOpen, onClose, data} = usePreviewModal()
-  const {modal, openModal, closeModal} = usePreviewModal();
+  const {modal, closeModal} = usePreviewModal();
   const product = usePreviewModal();
 
   const  imageData = modal.data.images
