@@ -1,15 +1,30 @@
 'use client';
 
-import { createContext } from "react";
-import usePreviewModal from 'hooks/use-preview-modal';
+import { createContext, useContext, useState } from "react";
 
-const PreviewModalContext = createContext();
+export const PreviewModalContext = createContext();
 
 
 export const ModalContextProvider  = ({children}) => {
-const preview = usePreviewModal();
+  const [modal, setModal] = useState({
+    isOpen: false,
+    data: null
+  });
+
+  const openModal = (data) => {
+    setModal({
+      isOpen: true,
+      data
+    })
+  }
+  const closeModal = () => {
+    setModal({
+      isOpen: false,
+      data: null
+    })
+  }
 return(
-  <PreviewModalContext.Provider value={preview}>
+  <PreviewModalContext.Provider value={{modal,openModal,closeModal}}>
     {children}
   </PreviewModalContext.Provider>
   )

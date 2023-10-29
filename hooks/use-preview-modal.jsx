@@ -1,28 +1,10 @@
 'use client';
 
-import { useState } from "react";
+import { useContext } from "react";
+import { PreviewModalContext } from "@/context/preview-modal-context";
 
 const usePreviewModal = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [data,setData] = useState(null);
-  const onOpen = (data) => {
-    // console.log('triggered') pass
-    setIsOpen(true);
-    setData(data);
-  }
-
-  const onClose = () => {
-    setIsOpen(false);
-    setData(null);
-  }
-  
-  return {
-    isOpen,
-    onOpen,
-    onClose,
-    data
-  }
-
+  return useContext(PreviewModalContext)
 }
 
 export default usePreviewModal;

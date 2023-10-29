@@ -2,9 +2,12 @@
 
 import { useEffect, useState } from "react";
 import PreviewModal from "../app/component/preview-modal";
+import usePreviewModal from "@/hooks/use-preview-modal";
 
 const ModalProvider = () => {
   const [isMounted, setIsMounted] = useState(false);
+
+  const {modal} = usePreviewModal();
 
   useEffect(() => {
     setIsMounted(true);
@@ -16,7 +19,11 @@ const ModalProvider = () => {
 
   return (
     <>
-      <PreviewModal />
+    {
+      modal.isOpen && (
+        <PreviewModal />
+        )
+    }
     </>
   )
 }

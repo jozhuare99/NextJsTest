@@ -9,7 +9,9 @@ import usePreviewModal from "@/hooks/use-preview-modal";
 import useCart from "@/hooks/use-cart";
 
 const ProductCard = ({data}) => {
-  const previewModal = usePreviewModal();
+  // const previewModal = usePreviewModal();
+  const modal = usePreviewModal();
+
   const cart = useCart();
   const router = useRouter();
   const handleClick = () =>  {
@@ -17,8 +19,7 @@ const ProductCard = ({data}) => {
   };
   const onPreview = (e) => {
     e.stopPropagation();
-    // console.log(data) pass
-    previewModal.onOpen(data);
+    modal.openModal(data)
   }
 
   const onAddToCart = (e) => {

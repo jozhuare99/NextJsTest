@@ -4,7 +4,6 @@ import { products } from "someData.js";
 import Billboard from "./component/ui/billboard";
 import Container from "./component/ui/container";
 import ProductList from "./component/product-list";
-import { ModalContextProvider } from "@/context/preview-modal-context";
 import ModalProvider from "providers/modal-provider";
 
 export default function Page() {
@@ -26,15 +25,13 @@ export default function Page() {
 
   return (
     <Container>
-      <ModalContextProvider>
-        <ModalProvider />
-        <div className="pb-10 space-y-10">
-          <Billboard data={billboard} />
-          <div className="flex flex-col px-4 gap-y-8 sm:px-6 lg:px-8">
-            <ProductList title="Featured Products" items={products} />
-          </div>
+      <div className="pb-10 space-y-10">
+        <Billboard data={billboard} />
+        <div className="flex flex-col px-4 gap-y-8 sm:px-6 lg:px-8">
+          <ProductList title="Featured Products" items={products} />
+          <ModalProvider />
         </div>
-      </ModalContextProvider>
+      </div>
     </Container>
   );
 }

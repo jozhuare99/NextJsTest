@@ -15,9 +15,9 @@ const Info = ({data}) => {
     <div className="">
       <h1 className="text-3xl font-bold text-gray-900">{data.name}</h1>
       <div className="flex justify-between mt-3 items-ned">
-        <p className="text-2xl text-slate-900">
+        <div className="text-2xl text-slate-900">
           <Currency value={data?.price} />
-        </p>
+        </div>
       </div>
       <hr className="my-4" />
       <div className="flex flex-col gap-y-6">

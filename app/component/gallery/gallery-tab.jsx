@@ -10,7 +10,7 @@ const GalleryTab = ({image}) => {
           <span className="absolute inset-0 w-full h-full overflow-hidden rounded-md aspect-square">
             <Image
               fill
-              src={image.url}
+              src={image.src}
               alt=""
               className="object-cover object-center"
             />
