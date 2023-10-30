@@ -11,8 +11,8 @@ import useCart from "@/hooks/use-cart";
 const ProductCard = ({data}) => {
   // const previewModal = usePreviewModal();
   const modal = usePreviewModal();
-
   const cart = useCart();
+
   const router = useRouter();
   const handleClick = () =>  {
     router.push(`/product/${data?.id}`);
@@ -31,8 +31,10 @@ const ProductCard = ({data}) => {
     <div onClick={handleClick} className="p-3 space-y-4 bg-white border cursor-pointer group rounded-xl">
       <div className="relative bg-gray-100 aspect-square rounded-xl">
         <Image
+          priority
           fill
           src={data.images[0]?.src}
+          sizes="(max-width: 768px) 100vw, 50vw"
           alt=""
           className="object-cover rounded-md aspect-square"
         />

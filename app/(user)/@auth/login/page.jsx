@@ -1,6 +1,6 @@
 'use client'
 
-import Modal from '../../../component/modal';
+import Modal from '../../../component/modal/Modal';
 import {useRouter} from 'next/navigation'
 
 export default function Page(){

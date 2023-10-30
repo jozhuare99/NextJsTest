@@ -18,7 +18,7 @@ const Gallery = ({images = []}) => {
         {images.map((image) => (
           <Tab.Panel key={image.id}>
             <div className="relative w-full h-full overflow-hidden aspect-square sm:rounded-lg">
-              <Image fill src={image.src} alt="Image" className="object-cover object-center"  />
+              <Image fill src={image.src} alt="Image" sizes="(max-width: 768px) 500px, 50vw" as="image/webp" className="object-cover object-center" priority />
             </div>
           </Tab.Panel>
         ))}

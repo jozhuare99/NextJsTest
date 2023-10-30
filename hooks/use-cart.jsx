@@ -1,11 +1,12 @@
 'use client';
 
-import { useState } from "react";
+import { useState,useContext } from "react";
+import { CartContext } from "@/context/cart-context";
 import {toast} from 'react-hot-toast';
 
-export const useCart = () => {
+export const cartActions = () => {
   const [items, setItems] = useState([]);
-
+  
   const addItem = (product, quantity = 1) => {
     const existingItem = get(product.id);
     if(existingItem){
@@ -17,11 +18,11 @@ export const useCart = () => {
       }]);
     }
   }
-
+  
   const removeItem = (id) => {
     setItems(items.filter(item => item.id !== id));
   }
-
+  
   const removeAll = () => {
     setItems([]);
   }
@@ -29,7 +30,7 @@ export const useCart = () => {
   const get = (id) => {
     return items.find(item => item.id === id);
   }
-
+  
   const set = (id, quantity) => {
     setItems(prevItems => {
       return prevItems.map(item => 
@@ -37,7 +38,7 @@ export const useCart = () => {
       );
     });
   }
-
+  
   const incrementQuantity = (id) => {
     setItems(prevItems => {
       return prevItems.map(item => 
@@ -62,7 +63,11 @@ export const useCart = () => {
     });
   }
 
-  return {items, addItem, removeItem, removeAll, get, set, incrementQuantity, decrementQuantity, modifyQuantity};
+  return {items, addItem, removeItem, removeAll, get, set, incrementQuantity, decrementQuantity, modifyQuantity}
+}
+
+const useCart = () => {
+  return useContext(CartContext);
 }
 
 export default useCart

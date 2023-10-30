@@ -12,7 +12,10 @@ const GalleryTab = ({image}) => {
               fill
               src={image.src}
               alt=""
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover object-center"
+              priority
+              as="img"
             />
           </span>
           <span className={CN('absolute inset-0 rounded-md ring-2 ring-offset-2', 

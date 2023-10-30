@@ -4,7 +4,7 @@ import {BagFill} from 'react-bootstrap-icons';
 import {useRouter} from "next/navigation";
 import {useEffect, useState } from 'react';
 import Button from '../buttons/button';
-import {useCart} from '@/hooks/use-cart';
+import useCart, {cartActions} from '@/hooks/use-cart';
 
  const NavbarActions = ()=> {
   const [isMounted, setIsMounted] = useState(false);

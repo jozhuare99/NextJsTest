@@ -1,13 +1,13 @@
 'use client';
 
 import {createContext} from 'react';
-import useCart from 'hooks/use-cart';
+import {cartActions} from 'hooks/use-cart';
 
 export const CartContext = createContext();
 
 
 export const CartContextProvider = ({children}) => {
-  const cart = useCart()
+  const cart = cartActions()
   return (
     <CartContext.Provider value={cart}>
       {children}

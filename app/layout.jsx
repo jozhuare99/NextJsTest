@@ -1,4 +1,3 @@
-import "./global.css";
 import GithubCorner from "./component/githubcorner/GithubCorner";
 import { Urbanist } from "next/font/google";
 import ThemeProvider from "./theme-provider";
@@ -9,7 +8,8 @@ import Navbar from "./component/nav/navbar";
 
 import ToastProvider from "providers/toast-provider";
 import Footer from "./component/footer";
-
+import "./global.css";
+ 
 export const metadata = {
   metadataBase: new URL("https://nextjs.org/"),
 
@@ -124,7 +124,8 @@ const font = Urbanist({ subsets: ["latin"] });
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={font.className}>
+      {/* */}
+      <body className={font.className} >
         <GithubCorner />
         <ThemeProvider>
           <CartContextProvider>
