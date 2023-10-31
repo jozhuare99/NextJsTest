@@ -11,7 +11,8 @@ export const revalidate = 0;
 const ProductPage = ({params}) => {
   const product = products.find(p => p.id === params.productid);
 
-  console.log(product)
+  const bestSellingList = list.find(item => item.title === 'Best Selling');
+
   if(!product){
     return null;
   }
@@ -26,7 +27,7 @@ const ProductPage = ({params}) => {
               <Info data={product}/>
             </div>
             <hr className="my-10" />
-            <ProductList title="Related Items" items={list}/>
+            <ProductList title="Related Items" items={bestSellingList.items}/>
           </div>
         </div>
       </Container>

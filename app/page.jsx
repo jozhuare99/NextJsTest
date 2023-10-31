@@ -4,7 +4,7 @@ import { products } from "someData.js";
 import Billboard from "./component/ui/billboard";
 import Container from "./component/ui/container";
 import ProductList from "./component/product-list";
-import ModalProvider from "providers/modal-provider";
+
 
 export default function Page() {
   const billboard = {
@@ -29,7 +29,6 @@ export default function Page() {
         <Billboard data={billboard} />
         <div className="flex flex-col px-4 gap-y-8 sm:px-6 lg:px-8">
           <ProductList title="Featured Products" items={products} />
-          <ModalProvider />
         </div>
       </div>
     </Container>

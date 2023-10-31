@@ -15,6 +15,7 @@ const ProductCard = ({data}) => {
 
   const router = useRouter();
   const handleClick = () =>  {
+    modal.closeModal();
     router.push(`/product/${data?.id}`);
   };
   const onPreview = (e) => {

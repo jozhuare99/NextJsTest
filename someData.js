@@ -5,32 +5,100 @@ export const list = [
     title: 'Best Selling',
     items: [
       {
-        title: "Acetate Sunglasses",
-        price: 10.99,
-        rating: 5.0,
-        ratingCount: 70,
-        image: '/image.png',
+        id: "21ewada3dasx",
+        name: 'alarm clock',
+        price: 10.00,
+        rating: 9,
+        category: {
+          name: "Elbow"
+        },
+        images: [
+          {
+            id: 1,
+            name: 'Ange',
+            src: '/products/zipto/prod2.jpg',
+            alt: 'a',
+          },
+        ],
+        colors: [
+          {
+            name:'Nek',
+            value: '#FF2'
+          }
+        ],
+        sizes: [
+          {name: 'XL', selected: false},
+          {name: 'L', selected: false},
+          {name: 'M', selected: false},
+          {name: 'S', selected: false},
+          {name: 'XS', selected: false}
+        ],
+        description: `
+          <p>The Zip Tote Basket is the perfect midpoint between shopping note and comfy backpack. With convertible straps,
+          you can hand carry, should sling, or backpack this </p>
+        `,
+        details: [
+          {
+            name: 'Features',
+            value: [
+              'Multiple strap configurations',
+              'Spacious interior with top zip',
+              'Leather handle and tabs',
+              'Interior Dividers',
+              'Stainless strap loops',
+              'Double stitched construction',
+              'Water-resistance',
+            ]
+          }
+        ]
       },
       {
-        title: 'Wool Cashmere Jacket',
-        price: 180,
-        rating: 4.7,
-        ratingCount: 23,
-        image: '/coat.png'
-      },
-      {
-        title: 'Travel Pet Carrier',
-        price: 42,
-        rating: 4.5,
-        ratingCount: 50,
-        image: '/bag.png'
-      },
-      {
-        title: 'Clem Cashmere Scarf',
-        price: 65,
-        rating: 4.9,
-        ratingCount: 46,
-        image: '/scarf.png'
+        id: "lasuj63u2yghbahdg672g3db",
+        name: 'table chairs',
+        price: 1290.00,
+        rating: 9,
+        category: {
+          name: "Chair"
+        },
+        images: [
+          {
+            id: 1,
+            name: 'Ange',
+            src: '/products/zipto/prod3.jpg',
+            alt: 'a',
+          },
+        ],
+        colors: [
+          {
+            name:'Nek',
+            value: '#FF2'
+          }
+        ],
+        sizes: [
+          {name: 'XL', selected: false},
+          {name: 'L', selected: false},
+          {name: 'M', selected: false},
+          {name: 'S', selected: false},
+          {name: 'XS', selected: false}
+        ],
+        description: `
+          <p>The Zip Tote Basket is the perfect midpoint between shopping note and comfy backpack. With convertible straps,
+          you can hand carry, should sling, or backpack this </p>
+        `,
+        details: [
+          {
+            name: 'Features',
+            value: [
+              'Multiple strap configurations',
+              'Spacious interior with top zip',
+              'Leather handle and tabs',
+              'Interior Dividers',
+              'Stainless strap loops',
+              'Double stitched construction',
+              'Water-resistance',
+            ]
+          }
+        ]
       }
     ]
   },
@@ -69,7 +137,8 @@ export const list = [
   }
 ]
 
-export const  products = [{
+export const  products = [
+  {
   id: "asid8732hndjakdsb3u72gdbjhas",
   name: 'Zip Tote Basket',
   price: 140.00,
@@ -131,6 +200,102 @@ export const  products = [{
     }
   ]
 },
+{
+  id: "21ewada3dasx",
+  name: 'alarm clock',
+  price: 10.00,
+  rating: 9,
+  category: {
+    name: "Elbow"
+  },
+  images: [
+    {
+      id: 1,
+      name: 'Ange',
+      src: '/products/zipto/prod2.jpg',
+      alt: 'a',
+    },
+  ],
+  colors: [
+    {
+      name:'Nek',
+      value: '#FF2'
+    }
+  ],
+  sizes: [
+    {name: 'XL', selected: false},
+    {name: 'L', selected: false},
+    {name: 'M', selected: false},
+    {name: 'S', selected: false},
+    {name: 'XS', selected: false}
+  ],
+  description: `
+    <p>The Zip Tote Basket is the perfect midpoint between shopping note and comfy backpack. With convertible straps,
+    you can hand carry, should sling, or backpack this </p>
+  `,
+  details: [
+    {
+      name: 'Features',
+      value: [
+        'Multiple strap configurations',
+        'Spacious interior with top zip',
+        'Leather handle and tabs',
+        'Interior Dividers',
+        'Stainless strap loops',
+        'Double stitched construction',
+        'Water-resistance',
+      ]
+    }
+  ]
+},
+{
+  id: "lasuj63u2yghbahdg672g3db",
+  name: 'table chairs',
+  price: 1290.00,
+  rating: 9,
+  category: {
+    name: "Chair"
+  },
+  images: [
+    {
+      id: 1,
+      name: 'Ange',
+      src: '/products/zipto/prod3.jpg',
+      alt: 'a',
+    },
+  ],
+  colors: [
+    {
+      name:'Nek',
+      value: '#FF2'
+    }
+  ],
+  sizes: [
+    {name: 'XL', selected: false},
+    {name: 'L', selected: false},
+    {name: 'M', selected: false},
+    {name: 'S', selected: false},
+    {name: 'XS', selected: false}
+  ],
+  description: `
+    <p>The Zip Tote Basket is the perfect midpoint between shopping note and comfy backpack. With convertible straps,
+    you can hand carry, should sling, or backpack this </p>
+  `,
+  details: [
+    {
+      name: 'Features',
+      value: [
+        'Multiple strap configurations',
+        'Spacious interior with top zip',
+        'Leather handle and tabs',
+        'Interior Dividers',
+        'Stainless strap loops',
+        'Double stitched construction',
+        'Water-resistance',
+      ]
+    }
+  ]
+}
 
 ]
 

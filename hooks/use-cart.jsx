@@ -11,16 +11,19 @@ export const cartActions = () => {
     const existingItem = get(product.id);
     if(existingItem){
       set(product.id, existingItem.quantity + quantity);
+      toast.success('Item quantity updated! total quantity: ' + (existingItem.quantity + quantity));
     } else {
       setItems([...items, {
         ...product,
         quantity
       }]);
+      toast.success('Item added to cart!');
     }
   }
   
   const removeItem = (id) => {
     setItems(items.filter(item => item.id !== id));
+    toast.success('Item removed from cart!');
   }
   
   const removeAll = () => {

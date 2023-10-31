@@ -3,6 +3,7 @@ import { Urbanist } from "next/font/google";
 import ThemeProvider from "./theme-provider";
 import { CartContextProvider } from "@/context/cart-context";
 import { ModalContextProvider } from "@/context/preview-modal-context";
+import ModalProvider from "providers/modal-provider";
 
 import Navbar from "./component/nav/navbar";
 
@@ -130,6 +131,7 @@ export default function RootLayout({ children }) {
         <ThemeProvider>
           <CartContextProvider>
             <ModalContextProvider>
+              <ModalProvider />
               <ToastProvider />
               <Navbar />
               {children}
