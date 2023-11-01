@@ -5,7 +5,8 @@
       "@/lib/*": ["./lib/*"],
       "@/hooks/*": ["./hooks/*"],
       "@/context/*": ["./context/*"],
-      "@/provider/*": ["./provider/*"],
+      "@/providers/*": ["./providers/*"],
+      "@/components/*": ["./components/*"],
     }
   }
 }

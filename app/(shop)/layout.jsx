@@ -1,15 +1,15 @@
-import GithubCorner from "./component/githubcorner/GithubCorner";
+import GithubCorner from "../component/githubcorner/GithubCorner";
 import { Urbanist } from "next/font/google";
-import ThemeProvider from "./theme-provider";
-import { CartContextProvider } from "@/context/cart-context";
-import { ModalContextProvider } from "@/context/preview-modal-context";
+import ThemeProvider from "../theme-provider";
+import { CartContextProvider } from "context/cart-context";
+import { ModalContextProvider } from "context/preview-modal-context";
 import ModalProvider from "providers/modal-provider";
 
-import Navbar from "./component/nav/navbar";
+import Navbar from "../component/nav/navbar";
 
 import ToastProvider from "providers/toast-provider";
-import Footer from "./component/footer";
-import "./global.css";
+import Footer from "../component/footer";
+import "../global.css";
  
 export const metadata = {
   metadataBase: new URL("https://nextjs.org/"),

@@ -661,6 +661,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"animejs@npm:^3.2.1":
+  version: 3.2.1
+  resolution: "animejs@npm:3.2.1"
+  checksum: 6939171bed17d6b28307747e564d33e93312c26169b98498c833117d86f174ce7a318469bfd81716c223860a6d13bd76b761e79e765b86b2a2f851963caaa851
+  languageName: node
+  linkType: hard
+
 "ansi-regex@npm:^5.0.1":
   version: 5.0.1
   resolution: "ansi-regex@npm:5.0.1"
@@ -3812,6 +3819,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"next-themes@npm:^0.2.1":
+  version: 0.2.1
+  resolution: "next-themes@npm:0.2.1"
+  peerDependencies:
+    next: "*"
+    react: "*"
+    react-dom: "*"
+  checksum: ebc248b956138e73436c4ed0a0f0a877a0a48a33156db577029b8b8469e48b5c777d61abf2baeb75953378febea74e067a4869ff90b4a3e94fce123289b862ba
+  languageName: node
+  linkType: hard
+
 "next@npm:^13.5.5":
   version: 13.5.5
   resolution: "next@npm:13.5.5"
@@ -4782,6 +4800,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-spinners@npm:^0.13.8":
+  version: 0.13.8
+  resolution: "react-spinners@npm:0.13.8"
+  peerDependencies:
+    react: ^16.0.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.0.0 || ^17.0.0 || ^18.0.0
+  checksum: cb58f916bbf00c4f7fc33c1a75a8c0f91a98a42af26944340a0e29e4b3a97937a03f0292bc444eb5f5f0bea099344b580f9c04a81524246dadbf0571bdb57e62
+  languageName: node
+  linkType: hard
+
 "react@npm:^18.2.0":
   version: 18.2.0
   resolution: "react@npm:18.2.0"
@@ -4995,6 +5023,7 @@ __metadata:
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
     "@headlessui/react": ^1.7.17
+    animejs: ^3.2.1
     autoprefixer: ^10.4.16
     axios: ^1.6.0
     clsx: ^2.0.0
@@ -5003,18 +5032,21 @@ __metadata:
     eslint-config-next: 13.5.6
     mangle-css-class-webpack-plugin: ^5.1.0
     next: ^13.5.5
+    next-themes: ^0.2.1
     postcss: ^8.4.31
     query-string: ^8.1.0
     react: ^18.2.0
     react-bootstrap-icons: ^1.10.3
     react-dom: ^18.2.0
     react-hot-toast: ^2.4.1
+    react-spinners: ^0.13.8
     sharp: ^0.32.6
     stylelint: ^15.11.0
     stylelint-config-standard: ^34.0.0
     stylelint-webpack-plugin: ^4.1.1
     tailwind-merge: ^1.14.0
     tailwindcss: ^3.3.3
+    tailwindcss-animate: ^1.0.7
   languageName: unknown
   linkType: soft
 
@@ -5701,6 +5733,15 @@ __metadata:
   version: 1.14.0
   resolution: "tailwind-merge@npm:1.14.0"
   checksum: 8cf5d37f51b3b32e4bdd5544feaed34357bfba2f64f14834cc4a21ac29b0ae22d7255386467a0f1dadb3e38499389efbbabeddcd0b16571af5a0d346a4921877
+  languageName: node
+  linkType: hard
+
+"tailwindcss-animate@npm:^1.0.7":
+  version: 1.0.7
+  resolution: "tailwindcss-animate@npm:1.0.7"
+  peerDependencies:
+    tailwindcss: "*"
+  checksum: c1760983eb3fec0c8421e95082bf308e6845df43e2f90862386366e82545c801b26b4d189c4cd23d6915252b76d18005c8e5f591f8b119944c7fb8650d0f8bce
   languageName: node
   linkType: hard
 

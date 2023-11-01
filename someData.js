@@ -299,6 +299,138 @@ export const  products = [
 
 ]
 
+export const billboard = [
+  {
+    id: "hyo2188217hdo821",
+    storeId: "lakdniuqwndo81",
+    store: {
+      StoreToBillBoard: {
+        fields: ["hyo2188217hdao821", "lakdniuqwndo8s1"],
+        references: ["iDnuyedbuysauy"],
+      },
+    },
+    label: "Apparel",
+    imageUrl: "/billboard/apparel.jpg",
+    category: "apparel",
+    categories: ["Category 1", "Category 2", "Category 3"],
+    createdAt: "2022-01-01T00:00:00.000Z",
+    updatedAt: "2022-01-01T00:00:00.000Z",
+  },
+  {
+    id: "937hajskd23dbukgh",
+    storeId: "dasuh2783hdiuh",
+    store: {
+      StoreToBillBoard: {
+        fields: ["hyo2188217hdao821", "lakdniuqwndo8s1"],
+        references: ["iDnuyedbuysauy"],
+      },
+    },
+    label: "Electronics",
+    imageUrl: "/billboard/electronics.jpg",
+    category: "electronics",
+    categories: ["Category 1", "Category 2", "Category 3"],
+    createdAt: "2022-01-01T00:00:00.000Z",
+    updatedAt: "2022-01-01T00:00:00.000Z",
+  },
+  {
+    id: "9182uaisjnddyg3",
+    storeId: "ad1ss12wdsss",
+    store: {
+      StoreToBillBoard: {
+        fields: ["hyo2188217hdao821", "lakdniuqwndo8s1"],
+        references: ["iDnuyedbuysauy"],
+      },
+    },
+    label: "Home & Garden",
+    imageUrl: "/billboard/homeAndGarden.jpg",
+    category: "homeandgarden",
+    categories: ["Category 1", "Category 2", "Category 3"],
+    createdAt: "2022-01-01T00:00:00.000Z",
+    updatedAt: "2022-01-01T00:00:00.000Z",
+  },
+  {
+    id: "093jnygbgdhjjasd734",
+    storeId: "aqqd23dadsfqawqed",
+    store: {
+      StoreToBillBoard: {
+        fields: ["hyo2188217hdao821", "lakdniuqwndo8s1"],
+        references: ["iDnuyedbuysauy"],
+      },
+    },
+    label: "Health & Beauty",
+    imageUrl: "/billboard/healthAndBeauty.jpg",
+    category: "healthandbeauty",
+    categories: ["Category 1", "Category 2", "Category 3"],
+    createdAt: "2022-01-01T00:00:00.000Z",
+    updatedAt: "2022-01-01T00:00:00.000Z",
+  },
+  {
+    id: "JOIj237dnajksd76g",
+    storeId: "jakdiunoidhbwlqih&^%7",
+    store: {
+      StoreToBillBoard: {
+        fields: ["hyo2188217hdao821", "lakdniuqwndo8s1"],
+        references: ["iDnuyedbuysauy"],
+      },
+    },
+    label: "Toys & Games",
+    imageUrl: "/billboard/toysAndGames.jpg",
+    category: "toys",
+    categories: ["Category 1", "Category 2", "Category 3"],
+    createdAt: "2022-01-01T00:00:00.000Z",
+    updatedAt: "2022-01-01T00:00:00.000Z",
+  },
+  {
+    id: "awdnajsndui3n324",
+    storeId: "asdasdasddsd&^%7",
+    store: {
+      StoreToBillBoard: {
+        fields: ["hyo2188217hdao821", "lakdniuqwndo8s1"],
+        references: ["iDnuyedbuysauy"],
+      },
+    },
+    label: "Food & Beverage",
+    imageUrl: "/billboard/foodAndBeverage.jpg",
+    category: "foodandbeverage",
+    categories: ["Category 1", "Category 2", "Category 3"],
+    createdAt: "2022-01-01T00:00:00.000Z",
+    updatedAt: "2022-01-01T00:00:00.000Z",
+  },
+  {
+    id: "qdwsad31dsasad",
+    storeId: "asaswww&^%23423ewedw7",
+    store: {
+      StoreToBillBoard: {
+        fields: ["hyo2188217hdao821", "lakdniuqwndo8s1"],
+        references: ["iDnuyedbuysauy"],
+      },
+    },
+    label: "Pet Supplies",
+    imageUrl: "/billboard/petSupplies.jpg",
+    category: "petsupplies",
+    categories: ["Category 1", "Category 2", "Category 3"],
+    createdAt: "2022-01-01T00:00:00.000Z",
+    updatedAt: "2022-01-01T00:00:00.000Z",
+  },
+  {
+    id: "23dsasdasdqd",
+    storeId: "23&kkuhj%asda",
+    store: {
+      StoreToBillBoard: {
+        fields: ["hyo2188217hdao821", "lakdniuqwndo8s1"],
+        references: ["iDnuyedbuysauy"],
+      },
+    },
+    label: "Sports & Outdoor",
+    imageUrl: "/billboard/sportsAndOutdoors.jpg",
+    category: "sportsandoutdoors",
+    categories: ["Category 1", "Category 2", "Category 3"],
+    createdAt: "2022-01-01T00:00:00.000Z",
+    updatedAt: "2022-01-01T00:00:00.000Z",
+  },
+
+]
+
 export const reviews = {
   average: 4,
   totalCount: 1624,

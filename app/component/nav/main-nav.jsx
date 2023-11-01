@@ -19,7 +19,7 @@ export default function MainNav({data}){
           key={route.href}
           href={route.href}
           className={CN(
-            route.active ? 'text-gray-900' : 'text-gray-500',
+            route.active ? 'text-gray-900 font-black' : 'text-gray-500',
             'group inline-flex items-center text-sm font-medium hover:text-gray-900'
           )}>
             {route.label}

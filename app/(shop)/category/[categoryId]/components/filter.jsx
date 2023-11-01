@@ -10,6 +10,7 @@ const Filter = ({
   name,
   valueKey,
 }) => {
+
   const searchParams = useSearchParams();
   const router = useRouter();
   const selectedValue = searchParams.get(valueKey);

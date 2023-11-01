@@ -1,15 +1,9 @@
 
 import {NextResponse} from 'next/server'
-
-
-const legacyPrefixes = ['/docs', '/blog']
+ 
  
 export default function middleware(request) {
   const { pathname } = request.nextUrl;
-
-  console.log(pathname)
-
-
 
   let cookie = request.cookies.get('nextjs')
   console.log(cookie) // => { name: 'nextjs', value: 'fast', Path: '/' }
