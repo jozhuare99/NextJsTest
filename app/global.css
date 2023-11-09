@@ -1769,6 +1769,11 @@ video {
   color: hsl(var(--primary));
 }
 
+.peer:focus ~ .peer-focus\:text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
 .data-\[te-input-state-active\]\:placeholder\:opacity-100[data-te-input-state-active]::-moz-placeholder {
   opacity: 1;
 }
