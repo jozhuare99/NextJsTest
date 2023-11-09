@@ -1,35 +1,35 @@
 
-import {NextResponse} from 'next/server'
- 
- 
-export default function middleware(request) {
-  const { pathname } = request.nextUrl;
+import {NextResponse} from 'next/server';
+import { isAuthenticated } from './lib/auth';
 
-  let cookie = request.cookies.get('nextjs')
-  console.log(cookie) // => { name: 'nextjs', value: 'fast', Path: '/' }
-  const allCookies = request.cookies.getAll()
-  console.log(allCookies) // => [{ name: 'nextjs', value: 'fast' }]
- 
-  request.cookies.has('nextjs') // => true
-  request.cookies.delete('nextjs')
-  request.cookies.has('nextjs') // => false
- 
-  // Setting cookies on the response using the `ResponseCookies` API
-  const response = NextResponse.next()
-  response.cookies.set('vercel', 'fast')
-  response.cookies.set({
-    name: 'vercel',
-    value: 'fast',
-    path: '/about/path:*',
-  })
-  cookie = response.cookies.get('vercel')
-  console.log(cookie) // => { name: 'vercel', value: 'fast', Path: '/' }
-  // The outgoing response will have a `Set-Cookie:vercel=fast;path=/test` header.
+export const runtime = "nodejs";
+
+export default async function middleware(request) {
+  const { pathname } = request.nextUrl; 
+  console.log(!isAuthenticated(request))
+  if(!isAuthenticated(request)){
+    return NextResponse.redirect(new URL('/login', request.url))
+  }
+  // const oneDay = 24 * 60 * 60 * 1000;
+
+  // const response = NextResponse.next()
+  // response.cookies.set('vercel', 'fast')
+  // response.cookies.set({
+  //   name: 'vercel',
+  //   value: 'fast',
+  //   path: '/dashboard',
+  //   expires: Date.now() + oneDay 
+  // })
+
+  
+
+// const allCookies = request.cookies.getAll();
+// console.log(allCookies)
  
   return response
 }
 
 
 export const config = {
-  matcher: '/about'
+  matcher: ['/dashboard', '/dashboard/:path*', '/api/:function*'],
 }

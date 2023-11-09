@@ -1,4 +1,4 @@
-import {Inter} from "next/font/google";
+import {Urbanist} from "next/font/google";
 import ThemeProvider from "app/theme-provider";
 import ToastProvider from "providers/toast-provider";
 
@@ -7,12 +7,13 @@ export const metadata = {
   description: 'E-Commerce Dashboard',
 }
 
-const inter = Inter({subsets: ['latin']})
+const urbanist = Urbanist({subsets: ['latin']})
+import 'app/global.css';
 
 export default function DashBoardLayout({children}) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={urbanist.className}>
         <ThemeProvider>
         <p>dahsboard form root dahboard</p>
           <ToastProvider />
