@@ -4,5 +4,5 @@ CREATE TABLE sessions (
   sessionId VARCHAR(255) NOT NULL,
   expiration DATETIME NOT NULL,
   PRIMARY KEY (id),
-  FOREIGN KEY (user id) REFERENCES users (id)
+  FOREIGN KEY (userId) REFERENCES users (id)
 )

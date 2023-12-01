@@ -6,8 +6,17 @@ const nextConfig = {
     domains: [
       "tailwindui.com",
       "res.cloudinary.com"
-    ]
-  }
+    ],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'tecdn.b-cdn.net',
+      },
+    ],
+  },
+  experimental: {
+    serverActions: true,
+  },
 }
 
 module.exports = nextConfig

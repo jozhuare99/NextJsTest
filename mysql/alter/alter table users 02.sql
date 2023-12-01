@@ -1,0 +1,1 @@
+alter table users change  column name firstName varchar(255), add column lastName varchar(255);

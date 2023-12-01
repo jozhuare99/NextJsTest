@@ -1,0 +1,1 @@
+alter table users add birthDate DATE, add gender enum('m','f');

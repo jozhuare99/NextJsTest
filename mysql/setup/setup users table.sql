@@ -10,4 +10,4 @@ TABLE users (
   role VARCHAR(255) NOT NULL DEFAULT 'user',
   last_login_at TIMESTAMP NULL,
   PRIMARY KEY (id)
-);
+); 

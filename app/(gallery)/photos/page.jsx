@@ -1,3 +1,5 @@
+'use client';
+
 import {Photos} from '../../data/interceptionData';
 import Link from 'next/link';
 import Image from 'next/image';
