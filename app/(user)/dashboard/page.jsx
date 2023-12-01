@@ -1,23 +1,19 @@
-'use client';
+"use client";
 
-import { Suspense } from "react";
-import PostFeed from '../../component/postFeed';
-import Weather from '../../component/weather';
-import {useSelectedLayoutSegment} from 'next/navigation';
+import { useStoreModal } from "@/hooks/use-store-modal";
+import { useEffect } from "react";
 
-export default function Page() {
+const SetupPage = () => {
+  const onOpen = useStoreModal((state) => state.onOpen);
+  const isOpen = useStoreModal((state) => state.isOpen);
 
-  const loginSegments = useSelectedLayoutSegment('auth');
-  return (
-    <div>
-      <h1>Hello, Dashboard Page!</h1>
-      {/* <Suspense fallback={<p>Loading feed...</p>}>
-        <PostFeed />
-      </Suspense>
-      <Suspense fallback={<p>Loading weather...</p>}>
-        <Weather />
-      </Suspense> */}
-      
-    </div>
-  )
+  useEffect(() => {
+    if(!isOpen){
+      onOpen();
+    }
+  }, [isOpen, onOpen])
+
+  return null;
 }
+
+export default SetupPage;

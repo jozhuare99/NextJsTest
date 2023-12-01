@@ -7,8 +7,6 @@ export default async function middleware(request) {
   const { pathname } = request.nextUrl; 
   const checkIfAuthenticated = await isAuthenticated(request);
 
- 
-  
 
   if(!checkIfAuthenticated){
     console.log('not authenticated');
@@ -16,7 +14,6 @@ export default async function middleware(request) {
   } else {
     
     console.log('authenticated')
-    const oneDay = 24 * 60 * 60 * 1000;
   
     const response = NextResponse.next();
     // response.cookies.set('vercel', 'fast')
@@ -43,8 +40,6 @@ console.log(pathname)
 
 
 export const config = {
-  matcher: ['/dashboard', '/dashboard/:path*',
-  '/api/:function*'
-],
+  matcher: ['/api/:function*'],
   
 }

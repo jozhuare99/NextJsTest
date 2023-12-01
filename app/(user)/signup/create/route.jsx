@@ -24,8 +24,9 @@ export async function POST(req) {
               const sessionId = generateRandomKey(16);
               const date = new Date();
               const hour = date.setHours(date.getHours() + 24);
-              const oneDay = new Date(hour).toISOString().slice(0, 19).replace('T', ' ');
-              const session =  await execute('insert into sessions(userId,sessionId,expiration) values(?,?,?)',[insertId,sessionId,oneDay]);
+              const oneDay = new Date(hour)
+              const dayToSQLDay = oneDay.toISOString().slice(0, 19).replace('T', ' ');
+              const session =  await execute('insert into sessions(userId,sessionId,expiration) values(?,?,?)',[insertId,sessionId,dayToSQLDay]);
 
               const payload = {
                 userId:insertId,
@@ -44,7 +45,7 @@ export async function POST(req) {
               // }
 
               if(session.affectedRows > 0){
-                const signToken = await SignToken(payload);
+                const signToken = await SignToken(payload, oneDay);
                 
                 if(signToken){
                   cookies().set({

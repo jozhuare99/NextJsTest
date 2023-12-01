@@ -1,13 +1,15 @@
 'use client';
 
-import { useState } from "react"; 
+import { useState, useEffect } from "react"; 
 import Link from 'next/link';
 import {useRouter} from 'next/navigation';
 import SocialButton from "app/component/buttons/socialButton";
 
 export default function UserLoginForm(){
-  const router = useRouter();
 
+  const [validEmail,setValidEmail] = useState(false);
+  const [validPassword, setValidPassword] = useState(false);
+  const router = useRouter();
   const inputData = {
     email: '',
     password: '',
@@ -15,14 +17,12 @@ export default function UserLoginForm(){
   };
 
   
+  
   const [input,setInput] = useState(inputData);
 
   const login = async (e) => {
     e.preventDefault();
     try {
-      const email = input.email;
-      const password = input.password;
-
       const url = "http://localhost:3000/login/auth"
 
       const stringify = JSON.stringify(input);
@@ -40,7 +40,6 @@ export default function UserLoginForm(){
       const data = await response.json();
       const {token} = data;
 
-      const oneDayInMilliseconds = 24 * 60 * 60 * 1000;
       if(token){
         router.replace('/dashboard');
       } else {
@@ -87,6 +86,11 @@ export default function UserLoginForm(){
       }
     })
   }
+
+  useEffect(() => {
+    setValidEmail(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]{2,})+$/.test(input.email))
+    setValidPassword(/^.{8,255}$/.test(input.password))
+  },[input])
 
 
   return (
@@ -217,9 +221,10 @@ export default function UserLoginForm(){
                   <a href="#!">Forgot password?</a>
                 </div>
                 <div className="py-2 text-center lg:text-left">
-                  <button type="submit"   className="
+                  <button type="submit" disabled={!validEmail || !validPassword}  className="
                   inline-block rounded bg-cyan-400 px-7 pb-2.5 pt-3 text-sm font-medium uppercase leading-normal text-white 
                   shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 
+                  disabled:opacity-75
                   hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]
                    focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] 
                    focus:outline-none focus:ring-0 active:bg-primary-700 
