@@ -16,7 +16,7 @@ export default async function DashboardLayout({children,params}){
   const cookie = cookies();
   const hasToken = cookie.has('token');
   const tokenObject = cookie.get('token');
-  const {name,value} = tokenObject;
+  const {value} = tokenObject;
 
   if(hasToken){
     const verifiedToken = await VerifyToken(value);
