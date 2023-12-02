@@ -636,6 +636,11 @@ video {
   margin: 2.5rem;
 }
 
+.-mx-1 {
+  margin-left: -0.25rem;
+  margin-right: -0.25rem;
+}
+
 .mx-1 {
   margin-left: 0.25rem;
   margin-right: 0.25rem;
@@ -839,6 +844,10 @@ video {
   height: 100%;
 }
 
+.h-px {
+  height: 1px;
+}
+
 .h-screen {
   height: 100vh;
 }
@@ -911,6 +920,10 @@ video {
   width: 100%;
 }
 
+.w-5 {
+  width: 1.25rem;
+}
+
 .max-w-2xl {
   max-width: 42rem;
 }
@@ -933,6 +946,10 @@ video {
 
 .flex-1 {
   flex: 1 1 0%;
+}
+
+.shrink-0 {
+  flex-shrink: 0;
 }
 
 .shrink-\[1\] {
@@ -997,12 +1014,22 @@ video {
   animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
+.cursor-default {
+  cursor: default;
+}
+
 .cursor-not-allowed {
   cursor: not-allowed;
 }
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.select-none {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 .appearance-none {
@@ -1144,6 +1171,10 @@ video {
   overflow-y: auto;
 }
 
+.overflow-x-hidden {
+  overflow-x: hidden;
+}
+
 .truncate {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1176,6 +1207,10 @@ video {
 
 .rounded-md {
   border-radius: calc(var(--radius) - 2px);
+}
+
+.rounded-sm {
+  border-radius: calc(var(--radius) - 4px);
 }
 
 .rounded-xl {
@@ -1266,6 +1301,10 @@ video {
 
 .bg-black\/60 {
   background-color: rgb(0 0 0 / 0.6);
+}
+
+.bg-border {
+  background-color: hsl(var(--border));
 }
 
 .bg-cyan-400 {
@@ -1364,6 +1403,10 @@ video {
      object-position: center;
 }
 
+.p-1 {
+  padding: 0.25rem;
+}
+
 .p-2 {
   padding: 0.5rem;
 }
@@ -1417,6 +1460,16 @@ video {
 .px-8 {
   padding-left: 2rem;
   padding-right: 2rem;
+}
+
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.py-1\.5 {
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
 }
 
 .py-10 {
@@ -1612,6 +1665,10 @@ video {
   color: hsl(var(--destructive-foreground));
 }
 
+.text-foreground {
+  color: hsl(var(--foreground));
+}
+
 .text-gray-500 {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
@@ -1683,6 +1740,10 @@ video {
 
 .opacity-100 {
   opacity: 1;
+}
+
+.opacity-50 {
+  opacity: 0.5;
 }
 
 .opacity-75 {
@@ -1887,6 +1948,14 @@ input:-internal-autofill-selected {
   background-image: none !important;
   background-color: -internal-light-dark(rgb(255, 255, 255), rgba(70, 90, 126, 0.4)) !important;
   color: fieldtext !important;
+}
+
+.placeholder\:text-muted-foreground::-moz-placeholder {
+  color: hsl(var(--muted-foreground));
+}
+
+.placeholder\:text-muted-foreground::placeholder {
+  color: hsl(var(--muted-foreground));
 }
 
 .before\:pointer-events-none::before {
@@ -2417,6 +2486,10 @@ input:-internal-autofill-selected {
   cursor: not-allowed;
 }
 
+.disabled\:opacity-50:disabled {
+  opacity: 0.5;
+}
+
 .disabled\:opacity-60:disabled {
   opacity: 0.6;
 }
@@ -2453,6 +2526,22 @@ input:-internal-autofill-selected {
 .peer:focus ~ .peer-focus\:text-slate-900 {
   --tw-text-opacity: 1;
   color: rgb(15 23 42 / var(--tw-text-opacity));
+}
+
+.aria-selected\:bg-accent[aria-selected="true"] {
+  background-color: hsl(var(--accent));
+}
+
+.aria-selected\:text-accent-foreground[aria-selected="true"] {
+  color: hsl(var(--accent-foreground));
+}
+
+.data-\[disabled\]\:pointer-events-none[data-disabled] {
+  pointer-events: none;
+}
+
+.data-\[disabled\]\:opacity-50[data-disabled] {
+  opacity: 0.5;
 }
 
 .data-\[side\=bottom\]\:slide-in-from-top-2[data-side=bottom] {
@@ -2817,4 +2906,27 @@ input:-internal-autofill-selected {
 
 .\[\&\:not\(\[data-te-input-placeholder-active\]\)\]\:placeholder\:opacity-0:not([data-te-input-placeholder-active])::placeholder {
   opacity: 0;
+}
+
+.\[\&_\[cmdk-group-heading\]\]\:px-2 [cmdk-group-heading] {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.\[\&_\[cmdk-group-heading\]\]\:py-1\.5 [cmdk-group-heading] {
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
+}
+
+.\[\&_\[cmdk-group-heading\]\]\:text-xs [cmdk-group-heading] {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.\[\&_\[cmdk-group-heading\]\]\:font-medium [cmdk-group-heading] {
+  font-weight: 500;
+}
+
+.\[\&_\[cmdk-group-heading\]\]\:text-muted-foreground [cmdk-group-heading] {
+  color: hsl(var(--muted-foreground));
 }

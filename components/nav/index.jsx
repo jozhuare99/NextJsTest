@@ -1,13 +1,10 @@
-'use client';
-
 import StoreSwitcher from "../ui/storeSwitcher";
 
-const Nav = async () => {
-
+const Nav = async ({stores}) => {
   return (
     <div className="border-b">
       <div className="flex items-center h-16 px-4">
-        <StoreSwitcher />
+        <StoreSwitcher className={''} items={stores}/>
         <p>main Nav</p>
         <div className="flex items-center ml-auto space-x-4">
           <p>theme toggle</p>
