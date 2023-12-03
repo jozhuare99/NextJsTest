@@ -38,7 +38,7 @@ const StoreSwitcher = ({className, items}) => {
           <ArrowDownUp className="w-4 h-4 ml-auto opacity-50 shrink-0" />
         </Button>
       </PopOverTrigger>
-      <PopOverContent >
+      <PopOverContent className="bg-white">
         <Command>
           <CommandList>
             <CommandInput placeholder="Search Store..." />
