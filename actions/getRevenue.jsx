@@ -8,16 +8,40 @@ export async function getGraphRevenue(storeId){
     const paidOrders = await query("SELECT orders.*, orderitem.*, product.* FROM orders INNER JOIN orderitem ON orders.id = orderitem.orderId INNER JOIN product ON orderitem.productId = product.id WHERE orders.storeId = ? AND orders.isPaid = true", [storeId]);
     
     // console.log(paidOrders);
+    // [
+    //   {
+    //     id: 1,
+    //     storeId: 1,
+    //     isPaid: 1,
+    //     phone: '+639217099339',
+    //     address: 'sitio Kalayakan Brgy kalawakan',
+    //     createdAt: 2023-12-04T09:33:40.000Z,
+    //     updatedAt: 2023-12-04T09:33:40.000Z,
+    //     orderId: 2,
+    //     productId: 1,
+    //     categoryId: 1,
+    //     name: 'Beer',
+    //     price: '12.20',
+    //     isFeatured: 0,
+    //     haveColor: 0,
+    //     haveSize: 0,
+    //     isArchived: 0
+    //   }
+    // ]
 
     const monthlyRevenue = {};
     for(const order of paidOrders){
-      const month = order.createdAt.getMonth();
+      const month = new Date(order.createdAt).getMonth();
+      // console.log(new Date(order.createdAt).getMonth())
       let revenueForOrder = 0;
-      for(const item of order.orderItems){
-        revenueForOrder += item.product.price.toNumber();
-      }
+        revenueForOrder += parseInt(order.price);
+      
       monthlyRevenue[month] = (monthlyRevenue[month] || 0) + revenueForOrder;
     }
+
+    // console.log(monthlyRevenue);
+    // { '11': 12 }
+
   
     const graphData = [
       {name:"Jan",total:0},
@@ -35,6 +59,7 @@ export async function getGraphRevenue(storeId){
     ];
   
     for(const month in monthlyRevenue){
+      // console.log(month)
       graphData[parseInt(month)].total = monthlyRevenue[parseInt(month)];
       // graphData[parseInt(month)].total = 2;
     }
