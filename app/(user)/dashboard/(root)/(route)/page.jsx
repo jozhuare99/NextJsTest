@@ -13,6 +13,7 @@ const SetupPage = () => {
     }
   }, [isOpen, onOpen])
 
+  console.log('run from dashboard root')
   return null;
 }
 

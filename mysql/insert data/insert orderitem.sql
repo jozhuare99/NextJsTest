@@ -1,0 +1,1 @@
+insert into orderitem (orderId,productId) values (1,1)

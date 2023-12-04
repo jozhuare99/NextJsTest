@@ -1,0 +1,1 @@
+insert into billboard (storeId, label, imageUrl) values (1, 'Label Billboard on Store', 'https://cdn.bannerbuzz.com/media/optionvalue/Banner-Stands-Wind-Flaps-560X590.jpg_1.jpg');

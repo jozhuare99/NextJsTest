@@ -18,7 +18,7 @@ const StoreSwitcher = ({className, items}) => {
   const router = useRouter();
   const params = useParams();
   
-  const currentStore = items.find((item) => item.name === decodeURIComponent(params.storeId));
+  const currentStore = items.find((item) => item.id === parseInt(params.storeId));
 
   // console.log(params.storeId)
   // console.log(currentStore)
@@ -26,7 +26,7 @@ const StoreSwitcher = ({className, items}) => {
   const onStoreSelect = (store) => {
     console.log(store)
     setOpen(false);
-    router.push(`/dashboard/${encodeURIComponent(store.name)}`)
+    router.push(`/dashboard/${store.id}`)
   }
 
   return (

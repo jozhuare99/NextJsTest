@@ -2,12 +2,15 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import {useRouter} from 'next/navigation';
 import SocialButton from "app/component/buttons/socialButton";
 import { useState, useEffect } from "react";
 
 const SignUpForm = () => {
 
   const [validForm, setValidForm] = useState(false);
+
+  const router = useRouter();
 
   const inputData = {
     firstName: '',
@@ -129,21 +132,26 @@ const SignUpForm = () => {
       }
       const data = await response.json();
 
-      console.log(data)
+      // console.log(data) // if success
+      // {
+      //   status: 200, 
+      //   message: 'Successfully Created a New Account', 
+      //   token: 'eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjUsInNlc3Npb25JZ…g0MH0.cPjKnvEc9Iq4af1ZBRvobZkTyvjrrkrEBLGXFX-JY08'
+      // }
+
       const {token} = data;
 
       const oneDayInMilliseconds = 24 * 60 * 60 * 1000;
 
       
       if(token){
-        setCookie('tok',token,)
-        router.replace('/dashboard');
+        router.push('/dashboard');
 
       } else {
         router.refresh();
       }
     } catch (error) {
-      console.error(`Error: ${error}`);
+      console.error(`Error: ${error.message}`);
       router.refresh();
     }
   };
