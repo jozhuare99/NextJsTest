@@ -47,7 +47,6 @@ export default async function Page({ params }) {
             </CardContent>
           </Card>
         </div>
-        <p>test</p>
         <Card className="col-span-4">
           <CardHeader>
             <CardTitle>OverView</CardTitle>
