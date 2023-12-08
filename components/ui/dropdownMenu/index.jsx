@@ -39,7 +39,7 @@ DropDownMenuSubContent.displayName = DropDownMenuPrimitive.SubContent.displayNam
 const DropDownMenuContent = forwardRef(({className, sideOffset = 4, ...props}, ref) => (
   <DropDownMenuPrimitive.Portal>
     <DropDownMenuPrimitive.Content ref={ref} sideOffset={sideOffset} className={CN(
-      "z-50 min-w-[8rem] overflow-hidden rounded-[0.7rem] border bg-popover p-1 text-popover-foreground shadow-md animate-in data-[side=bottom]:slide-in-top-2 data-[side=left]:slide-in-right-2 data-[side=right]:slide-in-left-2",
+      "z-50 min-w-[8rem] bg-white overflow-hidden rounded-[0.7rem] border bg-popover p-1 text-popover-foreground shadow-md animate-in data-[side=bottom]:slide-in-top-2 data-[side=left]:slide-in-right-2 data-[side=right]:slide-in-left-2",
       className
     )}
     {...props}
@@ -64,7 +64,7 @@ const DropDownMenuCheckboxItem = forwardRef(({className, children, checked, ...p
     className
     )}
   checked={checked}
-  props={...props}
+  {...props}
   >
     <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
       <DropDownMenuPrimitive.ItemIndicator>

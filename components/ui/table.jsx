@@ -12,12 +12,12 @@ const Table = forwardRef(({ className, ...props }, ref) => (
     />
   </div>
 ));
-// Table.displayName = "Table"
+Table.displayName = "Table"
 
 const TableHeader = forwardRef(({ className, ...props }, ref) => (
   <thead ref={ref} className={CN("[&_tr]:border-b", className)} {...props} />
 ));
-// TableHeader.displayName = "TableHeader"
+TableHeader.displayName = "TableHeader"
 
 const TableBody = forwardRef(({ className, ...props }, ref) => (
   <tbody
@@ -26,7 +26,7 @@ const TableBody = forwardRef(({ className, ...props }, ref) => (
     {...props}
   />
 ));
-// TableBody.displayName = "TableBody"
+TableBody.displayName = "TableBody"
 
 const TableFooter = forwardRef(({ className, ...props }, ref) => (
   <tfoot
@@ -35,7 +35,7 @@ const TableFooter = forwardRef(({ className, ...props }, ref) => (
     {...props}
   />
 ));
-// TableFooter.displayName = "TableFooter"
+TableFooter.displayName = "TableFooter"
 
 const TableRow = forwardRef(({ className, ...props }, ref) => (
   <tr
@@ -47,7 +47,7 @@ const TableRow = forwardRef(({ className, ...props }, ref) => (
     {...props}
   />
 ));
-// TableRow.displayName = "TableRow"
+TableRow.displayName = "TableRow"
 
 const TableHead = forwardRef(({ className, ...props }, ref) => (
   <th
@@ -59,7 +59,7 @@ const TableHead = forwardRef(({ className, ...props }, ref) => (
     {...props}
   />
 ));
-// TableHead.displayName = "TableHead"
+TableHead.displayName = "TableHead"
 
 const TableCell = forwardRef(({ className, ...props }, ref) => (
   <td
@@ -68,7 +68,7 @@ const TableCell = forwardRef(({ className, ...props }, ref) => (
     {...props}
   />
 ));
-// TableCell.displayName = "TableCell"
+TableCell.displayName = "TableCell"
 
 const TableCaption = forwardRef(({ className, ...props }, ref) => (
   <caption
@@ -77,7 +77,7 @@ const TableCaption = forwardRef(({ className, ...props }, ref) => (
     {...props}
   />
 ));
-// TableCaption.displayName = "TableCaption"
+TableCaption.displayName = "TableCaption"
 
 export {
   Table,

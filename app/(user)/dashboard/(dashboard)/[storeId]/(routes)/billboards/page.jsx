@@ -1,5 +1,7 @@
+"use server";
+
 import { query } from "@/lib/db";
-import { BillboardClient } from "./(components)/client";
+import { BillboardClient } from "./components/client";
 
 const BillboardPage = async ({params}) => {
   const billboards = await query("SELECT * FROM billboard WHERE storeId = ? order by createdAt desc", [params.storeId]);

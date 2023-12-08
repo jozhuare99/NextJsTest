@@ -19,6 +19,7 @@ const PopOverContent = forwardRef(({className, align = 'center', sideOffset = 4,
     />
   </PopoverPrimitive.Portal>
 ));
+PopOverContent.displayName = PopoverPrimitive.Content.displayName
 
 export {PopOver, PopOverTrigger, PopOverContent};
 

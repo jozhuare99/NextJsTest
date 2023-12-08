@@ -59,7 +59,7 @@ const CommandItem = forwardRef(({className, ...props}, ref) => (
 CommandItem.displayName = CommandPrimitive.Item.displayName
 
 const CommandSeparator = forwardRef(({className, ...props},ref) => (
-  <CommandPrimitive.Separator className={CN("-mx-1 h-px bg-border",className)} props={...props} ref={ref} />
+  <CommandPrimitive.Separator className={CN("-mx-1 h-px bg-border",className)} {...props} ref={ref} />
 ))
 CommandSeparator.displayName = CommandPrimitive.Separator.displayName
 

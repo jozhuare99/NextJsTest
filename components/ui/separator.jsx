@@ -13,5 +13,6 @@ const Separator = forwardRef(({className, orientation = 'horizontal', decorative
   {...props}
   />
 ))
+Separator.displayName = SeparatorPrimitive.Root.displayName
 
 export {Separator}

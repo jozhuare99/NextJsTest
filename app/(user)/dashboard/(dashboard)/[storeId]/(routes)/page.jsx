@@ -1,4 +1,5 @@
-import { SimpleCard, SimpleCardContent, SimpleCardHeader, SimpleCardTitle } from "@/components/ui/simpleCard";
+"use server";
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Header from "@/components/ui/heading.jsx";
 import { BoxesIcon, CreditCardIcon, DollarSign } from "@/components/ui/icon";

@@ -24,7 +24,7 @@ export const DataTable = ({columns,data,searchKey}) => {
     state: columnFilters
   })
 
-  // console.log(table.getHeaderGroups()[0].headers);
+  // console.log(table.getColumn(searchKey).getFilterValue());
   return (
     <div>
       <div className="flex items-center py-4">
@@ -74,10 +74,10 @@ export const DataTable = ({columns,data,searchKey}) => {
         </Table>
       </div>
       <div className="flex items-center justify-end py-4 space-x-2">
-        <Button variant="outline" size="sm" onCLick={() => table.previousPage()} disabled={!table.getCanPreviousPage()}>
+        <Button variant="outline" size="sm" onClick={() => table.previousPage()} disabled={!table.getCanPreviousPage()}>
           Previous
         </Button>
-        <Button variant="outline" size="sm" onCLick={() => table.nextPage()} disabled={!table.getCanNextPage()}>
+        <Button variant="outline" size="sm" onClick={() => table.nextPage()} disabled={!table.getCanNextPage()}>
           Next
         </Button>
       </div>

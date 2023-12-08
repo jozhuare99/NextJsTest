@@ -45,7 +45,7 @@ export const CellAction = ({data}) => {
             <ThreeDots className="w-4 h-4"/>
           </Button>
         </DropDownMenuTrigger>
-        <DropDownMenuContent align="end">
+        <DropDownMenuContent className="bg-white" align="end">
           <DropDownMenuLabel>Actions</DropDownMenuLabel>
           <DropDownMenuItem onClick={() => onCopy(data.id)}>
           <svg width="16" height="16"className="w-4 h-4 mr-2" viewBox="0 0 16 16">
@@ -53,10 +53,10 @@ export const CellAction = ({data}) => {
           </svg> 
           Copy Id
           </DropDownMenuItem>
-          <DropDownMenuItem onCLick={()=>router.push(`/dashboard/${params.storeId}/billboards/${data.id}`)}>
+          <DropDownMenuItem onClick={()=>router.push(`/dashboard/${params.storeId}/billboards/${data.id}`)}>
             <PencilSquare className="w-4 h-4 mr-2" /> Edit
           </DropDownMenuItem>
-          <DropDownMenuItem  onCLick={()=>setOpen(true)}>
+          <DropDownMenuItem  onClick={()=>setOpen(true)}>
             <Trash className="w-4 h-4 mr-2" /> Delete
           </DropDownMenuItem>
         </DropDownMenuContent>

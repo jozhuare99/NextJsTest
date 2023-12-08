@@ -43,7 +43,7 @@ export default async function DashboardLayout({ children, params }) {
     redirect("/login");
   }
 
-  // console.log('run from sotre id');
+  // console.log('run from store id');
 
 
   return (

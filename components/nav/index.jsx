@@ -1,13 +1,11 @@
-"use client"
+'use client'
 
 import MainNav from "../mainNav";
 import StoreSwitcher from "../ui/storeSwitcher";
 import ThemeToggle from "../ui/themeToggle";
-import {useRouter} from 'next/navigation';
+import {redirect} from 'next/navigation';
 
-const Nav = async ({stores}) => {
-
-  const router = useRouter();
+const Nav = ({stores}) => {
 
 
   const logOut = async (e) => {
@@ -25,7 +23,7 @@ const Nav = async ({stores}) => {
     }
 
     console.log('logout Success')
-    router.push('/');
+    redirect('/login');
     } catch (error) {
       console.log(error.message)
     }
@@ -39,7 +37,7 @@ const Nav = async ({stores}) => {
         <MainNav className="mx-6" />
         <div className="flex items-center ml-auto space-x-4">
           <ThemeToggle />
-          <button onClick={logOut}>Logout</button>
+          <button >Logout</button>
         </div>
       </div>
     </div>

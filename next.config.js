@@ -1,5 +1,3 @@
-
-
 const nextConfig = {
   reactStrictMode: true,
   images: {
@@ -13,10 +11,7 @@ const nextConfig = {
         hostname: 'tecdn.b-cdn.net',
       },
     ],
-  },
-  experimental: {
-    serverActions: true,
-  },
+  }
 }
 
 module.exports = nextConfig

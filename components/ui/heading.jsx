@@ -9,5 +9,5 @@ const Header = forwardRef(({title,description, className, ...props},ref) => (
   </div>
   )
 )
-
+Header.displayName = "Header"
 export default Header;

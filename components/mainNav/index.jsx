@@ -3,14 +3,16 @@
 import { CN } from "@/lib/utils";
 import Link from "next/link";
 import {useParams, usePathname} from "next/navigation";
+import { forwardRef } from "react";
 
 
-const MainNav = ({className, ...props}) => {
+const MainNav = forwardRef(({className, ...props},ref) => {
 
   const pathname = usePathname();
   const params = useParams();
 
-
+// console.log(pathname)
+// console.log(`/dashboard/${params.storeId}`)
   const routes = [
     {
       href: `/dashboard/${params.storeId}`,
@@ -54,14 +56,14 @@ const MainNav = ({className, ...props}) => {
     }
     
   ]
+
+  const getActive = (i) => routes[i].active ? "text-black font-semibold dark:text-white opacity-100": "text-muted-foreground"
   return (
-    <nav className={CN("flex item-center space-x-4 lg:space-x-6", className)} {...props}>
+    <nav ref={ref} className={`flex item-center space-x-4 lg:space-x-6 ${className}`} {...props}>
       {
-        routes.map((route) => (
-          <Link key={route.href} href={route.href} className={CN(
-            "text-sm font-medium transition-colors text-slate-700 opacity-80 hover:text-primary",
-            route.active ? "text-black font-semibold dark:text-white opacity-100": "text-muted-foreground"
-          )}
+        routes.map((route,i) => (
+          <Link key={route.label} href={route.href} prefetch={true} 
+          className={`text-sm font-medium transition-colors text-slate-700 opacity-80 hover:text-primary ${getActive(i)}`}
           >
             {route.label}
           </Link>
@@ -69,6 +71,7 @@ const MainNav = ({className, ...props}) => {
       }
     </nav>
   )
-}
+})
+MainNav.displayName = "MainNav"
 
 export default MainNav;
