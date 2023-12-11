@@ -23,7 +23,11 @@ const BillboardForm = ({initialData}) => {
         { initialData && ( <Button disabled={loading} variant="description" size="sm" onClick={()=>setOpen(true)}><Trash className="w-4 h-4" /></Button> ) }
       </div>
       <Separator />
-      <Form {...}
+      <Form {...form}>
+        <form>
+          
+        </form>
+      </Form>
     </>
   )
 }
