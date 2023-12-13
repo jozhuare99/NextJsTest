@@ -9,6 +9,8 @@ export const Modal = ({title,description,isOpen,onClose,children}) => {
     }
   }
   return (
+    <>
+   
     <Dialog open={isOpen} onOpenChange={onChange}>
       <DialogContent>
         <DialogHeader>
@@ -20,5 +22,7 @@ export const Modal = ({title,description,isOpen,onClose,children}) => {
         </div>
       </DialogContent>
     </Dialog>
+  
+  </>
   )
 }
