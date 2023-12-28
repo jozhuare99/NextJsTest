@@ -15,10 +15,10 @@ import { Input } from "@/components/ui/input";
 import {useRouter,useParams} from "next/navigation";
 import {toast} from "react-hot-toast"
 
-const formSchema = z.object({
-  label: z.string().min(1),
-  imageUrl: z.string().min(1),
-});
+// const formSchema = z.object({
+//   label: z.string().min(1),
+//   imageUrl: z.string().min(1),
+// });
 
 const BillboardForm = ({initialData}) => {
   const router = useRouter();
@@ -27,6 +27,30 @@ const BillboardForm = ({initialData}) => {
   const [loading,setLoading] = useState(false);
   const title = initialData ? 'Edit billboard' : 'Create billboard';
   const description = initialData ? 'Edit a billboard' : 'Add a new billboard';
+  const onSubmit= async (d) => {
+    try {
+      setLoading(true);
+      if(initialData){
+        fetch(`https://localhost:3000/api/${params.storeId}/billboards/${params.billboardId}`,{
+          method: "PATCH",
+          headers: {
+            Accept: "application/json",
+            'Content-Type': 'application/json',
+          },
+          body : JSON.stringify(d)
+        }).then((response) => response.json())
+        .then((data) => {
+          console.log('Billboard deleted successfully!', data);
+        }).catch((error) => {
+          console.error('Error Uploading', error.message);
+        })
+      }
+    } catch (error) {
+      toast.error('Something went wrong', error.message);
+    } finally {
+      setLoading(false)
+    }
+  }
   const onDelete = async () => {
     try {
       setLoading(true);
@@ -69,16 +93,16 @@ const BillboardForm = ({initialData}) => {
       </div>
       <Separator />
       <Form {...form}>
-        <form className="w-full space-y-8">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-8">
           <FormField control={form.control} name="imageUrl" 
           render={(a) => {
             // console.log(form.control)
-            console.log(a)
+            // console.log(a.field.value)
             return (
             <FormItem>
               <FormLabel>Background Image</FormLabel>
               <FormControl>
-                <ImageUpload value={a.field.value ? [a.field.value] : []} disabled={loading} onChange={(url) => a.field.onChange(url)} onRemove={()=>a.field.onChange('')} />
+                <ImageUpload value={a.field.value ? a.field.value : ''} disabled={loading} onChange={(url) => a.field.onChange(url)} onRemove={()=>a.field.onChange('')} />
               </FormControl>
             </FormItem>
           )}}/>

@@ -62,7 +62,7 @@ export async function POST(req,{params}){
       return new NextResponse("Unauthenticated", {status: 403});
     }
   } catch (error) {
-    
+    return new NextResponse(`InterNal Error ${error.message} `, {status: 403});
   }
 }
 

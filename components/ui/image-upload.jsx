@@ -21,28 +21,30 @@ const ImageUpload = ({disabled, onChange, onRemove, value}) => {
   if(!isMounted){
     return null;
   }
-  console.log(value)
+  // console.log(value)
 
   return (
     <div>
       <div className="flex items-center gap-4 mb-4">
         {
-          value.map((url) => (
-            <div key={url} className="relative w-[200px] h-[200px] rounded-md overflow-hidden">
+          value &&
+            <div className="relative w-[200px] h-[200px] rounded-md overflow-hidden">
               <div className="absolute z-10 top-2 right-2">
-                <Button type="button" onClick={() => onRemove(url)} variant="destructive" size="sm">
+                <Button type="button" onClick={() => onRemove(value)} variant="destructive" size="sm">
                   <Trash className="w-4 h-4" />
                 </Button>
               </div>
               <Image
+                priority
                 fill
+                sizes="(min-width: 200px) 50vw, 100vw"
                 className="object-cover"
                 alt="Image"
-                src={url}
+                src={value}
               />
             </div>
-          ))
         }
+
       </div>
       <CldUploadWidget onUpload={onUpload} uploadPreset="t4drjppf">
         {({open}) => {
