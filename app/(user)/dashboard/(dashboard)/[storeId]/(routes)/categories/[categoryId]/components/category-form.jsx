@@ -5,10 +5,12 @@ import Header from "@/components/ui/heading";
 import {Trash} from "react-bootstrap-icons";
 import  {useParams,useRouter} from "next/navigation"
 import { useState } from "react";
+import {useForm} from "react-hook-form";
 import {toast} from "react-hot-toast";
 import { Separator } from "@/components/ui/separator";
-import { Form, FormField } from "@/components/ui/form";
+import { Form, FormControl, FormField, FormItem, FormLabel } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
 export const CategoryForm = ({initialData, billboards}) => {
   const params = useParams();
@@ -90,7 +92,7 @@ toast.success(toastMessage);
       <div className="flex items-center justify-between">
         <Header title={title} description={description} />
         {initialData && (
-          <Button disable={loading} variant="destructive" size="sm" onClick={() => setOpen(true)}>
+          <Button disabled={loading} variant="destructive" size="sm" onClick={() => setOpen(true)}>
             <Trash className="w-4 h-4" />
           </Button>
         )}
@@ -103,11 +105,12 @@ toast.success(toastMessage);
               <FormItem>
                 <FormLabel>Name</FormLabel>
                 <FormControl>
-                  <Input disable={loading} placeHolder="Category Name" {...field} />
+                  <Input disabled={loading} placeholder="Category Name" {...field} />
                 </FormControl>
               </FormItem>
             )}
             />
+            
           </div>
         </form>
       </Form>

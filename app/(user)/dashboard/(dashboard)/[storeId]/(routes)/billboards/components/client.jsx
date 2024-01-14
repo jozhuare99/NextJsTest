@@ -18,7 +18,7 @@ export const BillboardClient = ({data}) => {
     <>
     <div className="flex items-center justify-between">
       <Header title={`Billboard (${data.length})`} description="manage your billboard heading" />
-      <Button variant="outline">
+      <Button variant="outline" onClick={()=>router.push(`/dashboard/${params.storeId}/billboards/new`)}>
         <Plus className="w-4 h-4 mr-2"/> Add New
       </Button>
     </div>

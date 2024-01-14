@@ -27,23 +27,41 @@ const BillboardForm = ({initialData}) => {
   const [loading,setLoading] = useState(false);
   const title = initialData ? 'Edit billboard' : 'Create billboard';
   const description = initialData ? 'Edit a billboard' : 'Add a new billboard';
-  const onSubmit= async (d) => {
+  const toastMessage = initialData ? 'Billboard updated' : 'Billboard Created';
+  const action = initialData ? 'Save Changes' : 'Create';
+
+  const onSubmit = async (d) => {
     try {
       setLoading(true);
       if(initialData){
-        fetch(`https://localhost:3000/api/${params.storeId}/billboards/${params.billboardId}`,{
+        const response = fetch(`/api/${params.storeId}/billboards/${params.billboardId}`,{
           method: "PATCH",
           headers: {
             Accept: "application/json",
             'Content-Type': 'application/json',
           },
           body : JSON.stringify(d)
-        }).then((response) => response.json())
-        .then((data) => {
-          console.log('Billboard deleted successfully!', data);
-        }).catch((error) => {
+        })
+        .catch((error) => {
+          console.log("error")
           console.error('Error Uploading', error.message);
         })
+        const responseData = await response.json();
+        console.log(responseData)
+        toast.success("updated successfully")
+      } else {
+        const response = await fetch(`/api/${params.storeId}/billboards`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json' // Assuming JSON data
+          },
+          body: JSON.stringify(d)
+        });
+    
+        const responseData = await response.json();
+        toast.success("billboard created successfully")
+        console.log(responseData); // Example usage
+        // Now you have the parsed response data in the responseData variable
       }
     } catch (error) {
       toast.error('Something went wrong', error.message);
@@ -80,9 +98,11 @@ const BillboardForm = ({initialData}) => {
   }
   const form = useForm({
     // resolver: zodResolver(formSchema),
-    defaultValues: initialData 
+    defaultValues: initialData || {
+      label:'',
+      imageUrl:''
+    }
   });
-  const action = initialData ? 'Save Changes' : 'Create';
   // console.log(form);
   return (
     <>
@@ -108,17 +128,19 @@ const BillboardForm = ({initialData}) => {
           )}}/>
           <div className="gap-8 md:grid md:grid-cols-3">
             <FormField control={form.control} name="label" render={
-              ({field}) => (
+              ({field}) =>{
+                // console.log(field)
+                return (
                 <FormItem>
                   <FormLabel>Label</FormLabel>
                   <FormControl>
                     <Input disabled={loading} placeholder="Billboard Label" {...field} />
                   </FormControl>
                 </FormItem>
-              )
+              )}
             } />
           </div>
-          <Button disabled={loading} className="ml-auto" type="submit">
+          <Button disabled={loading} variant="outline" className="ml-auto" type="submit">
             {action}
           </Button>
         </form>

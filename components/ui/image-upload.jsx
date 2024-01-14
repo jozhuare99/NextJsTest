@@ -16,7 +16,7 @@ const ImageUpload = ({disabled, onChange, onRemove, value}) => {
     null;
   }
   const onUpload = (r) => {
-    onChange(r.info.secure.secure_url);  
+    onChange(r.info.secure_url);  
   }
   if(!isMounted){
     return null;
@@ -35,7 +35,6 @@ const ImageUpload = ({disabled, onChange, onRemove, value}) => {
                 </Button>
               </div>
               <Image
-                priority
                 fill
                 sizes="(min-width: 200px) 50vw, 100vw"
                 className="object-cover"
@@ -46,13 +45,16 @@ const ImageUpload = ({disabled, onChange, onRemove, value}) => {
         }
 
       </div>
-      <CldUploadWidget onUpload={onUpload} uploadPreset="t4drjppf">
+      <CldUploadWidget onUpload={onUpload} 
+      uploadPreset="fiverr" 
+      options={{ sources: ['local', 'url', 'unsplash'] }}
+      >
         {({open}) => {
           const onClick = () => {
             open();
           }
           return (
-            <Button type="button" onClick={onclick} disabled={disabled} variant="secondary">
+            <Button type="button" onClick={onClick} disabled={disabled} variant="secondary">
               <PlusSquareDotted className="w-4 h-4 mr-2" /> Upload an Image
             </Button>
           )

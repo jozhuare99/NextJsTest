@@ -66,8 +66,10 @@ export async function GET({params}){
 }
 
 export async function PATCH(req,{params}){
+  console.log("patch");
   const body = await req.json();
   const {label, imageUrl} = body;
+  console.log(body);
   try {
     const cookie = cookies();
     const hasToken = cookie.has("token");

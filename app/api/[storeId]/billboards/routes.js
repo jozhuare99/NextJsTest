@@ -13,6 +13,7 @@ export async function POST(req,{params}){
 
   try {
     if (hasToken) {
+      // console.log(hasToken);
       const tokenObject = cookie.get("token");
       const { value } = tokenObject;
       const verifiedToken = await VerifyToken(value);

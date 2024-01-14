@@ -1,11 +1,15 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: [
-      "tailwindui.com",
-      "res.cloudinary.com"
-    ],
     remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'tailwindui.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+      },
       {
         protocol: 'https',
         hostname: 'tecdn.b-cdn.net',
